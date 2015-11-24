@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PowerUpScript : MonoBehaviour {
+public class PowerUp : MonoBehaviour {
 
-	HUDScript hud;
+	HUDJuego hud;
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player") 
 		{
-			hud = GameObject.Find("Main Camera").GetComponent<HUDScript>();
-			hud.IncreaseScore(10);
+			hud = GameObject.Find("Main Camera").GetComponent<HUDJuego>();
+			hud.incrementarPuntaje(10);
 			Destroy (this.gameObject);
 		}
 	}
