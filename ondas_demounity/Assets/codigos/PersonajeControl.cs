@@ -5,16 +5,22 @@ public class PersonajeControl : MonoBehaviour
 {
 	private Personaje personaje;
     private bool salto;
+	AudioSource as_personaje;
+	public AudioClip ac_jump;
 
 
 	void Awake()
 	{
 		personaje = GetComponent<Personaje>();
+		as_personaje = gameObject.GetComponent<AudioSource>();
 	}
 
     void Update ()
     {
-	    if (Input.GetButtonDown("Jump")) salto = true;
+		if (Input.GetButtonDown("Jump")){
+			salto = true;
+			as_personaje.PlayOneShot(ac_jump);
+		} 
     }
 
 	void FixedUpdate()
