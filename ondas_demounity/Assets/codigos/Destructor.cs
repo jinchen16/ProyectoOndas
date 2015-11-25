@@ -7,7 +7,7 @@ public class Destructor : MonoBehaviour {
 	{
 		if (other.tag == "Player") 
 		{
-			Application.LoadLevel(1);
+			Application.LoadLevel("escena_gameover");
 			return;
 		}
 		if (other.gameObject.transform.parent) 
